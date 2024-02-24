@@ -5,18 +5,14 @@ import re
 
 def final_answer(user_answer, captcha_question):
     extra_q, op = question(captcha_question)
-    answer = int(user_answer)
     if op == 0:
-        final_answer = answer + extra_q
-        print(final_answer)
+        final_answer = user_answer + extra_q
         return final_answer
     elif op == 2:
-        final_answer = answer * extra_q
-        print(final_answer)
+        final_answer = user_answer * extra_q
         return final_answer
     else:
-        final_answer = answer - extra_q
-        print(final_answer)
+        final_answer = user_answer - extra_q
         return final_answer
 
 
@@ -38,7 +34,7 @@ def question(text):
         print(english_numbers[0])
         return english_numbers[0], operation
     else:
-        return 0
+        return 0, 0
 
 
 def farsi_to_english(number):
