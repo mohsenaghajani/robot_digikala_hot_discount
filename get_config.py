@@ -33,8 +33,11 @@ def get_id():
                 show_captcha_question(data)
                 item_id = data['data']['active_hot_discount']['items']
                 url_id = data['data']['active_hot_discount']['id']
-                captcha_question = data['data']['captcha_data']['captcha_question']
-                return url_id, item_id, captcha_question
+                try:
+                    captcha_question = data['data']['captcha_data']['captcha_question']
+                except:
+                    print('')
+                return url_id, item_id,
             else:
                 print('id has not found')
         else:

@@ -16,15 +16,14 @@ def thread_for_answer(url_id, item_id, captcha_question):
 
             answer = final_answer(header['answer'], captcha_question)
             executor.submit(send_answer, header['header'], url_id, answer, item_id)
-            # executor.shutdown()
     except:
         print('we have problem in thread')
     executor.shutdown()
 
 
 if __name__ == '__main__':
-    url_id, item_id, captcha_question = get_id()
-    thread_for_answer(url_id, item_id, captcha_question)
+    url_id, item_id,  = get_id()
+    thread_for_answer(url_id, item_id, 'حاصل جمع و تفریق زیر چند میشه؟')
     # if  answers are wrong do this for enter answer from user
     # (for example when question is sum of two number or three number)
     # question is shown in chrome
