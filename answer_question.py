@@ -1,6 +1,8 @@
 import re
 
-# if  question is this 'count of scale in image plus some number ' this functions plus the default answer with number
+
+""" if  question is this 'count of scale in image plus some number ' 
+this functions plus the default answer with number"""
 
 
 def final_answer(user_answer, captcha_question):
@@ -23,12 +25,8 @@ def question(text):
         operation = 2
     else:
         operation = 0
-    # الگوی جدا کردن اعداد فارسی
     pattern = r'\d+'
-
-    # جدا کردن اعداد
     numbers = re.findall(pattern, text)
-    # تبدیل اعداد فارسی به اعداد انگلیسی
     if len(numbers) != 0:
         english_numbers = ["".join(farsi_to_english(num) for num in n) for n in numbers]
         print(english_numbers[0])

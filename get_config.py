@@ -16,7 +16,7 @@ def show_captcha_question(data):
             print(data['data']['captcha_data']['captcha_question'])
             print(data['data']['captcha_data']['captcha_image']['url'])
             url_image = data['data']['captcha_data']['captcha_image']['url']
-            # show image in chrome for when the question is Mathematical equation
+            """ # show image in chrome for when the question is Mathematical equation"""
             webbrowser.get(chrome_path).open(url_image)
             return
     except:
@@ -36,8 +36,8 @@ def get_id():
                 try:
                     captcha_question = data['data']['captcha_data']['captcha_question']
                 except:
-                    print('')
-                return url_id, item_id,
+                    captcha_question = ''
+                return url_id, item_id, captcha_question
             else:
                 print('id has not found')
         else:
