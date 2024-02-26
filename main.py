@@ -11,9 +11,9 @@ def thread_for_answer(url_id, item_id, captcha_question):
     try:
         for header in header_final:
             """
-            in final_header we have a list of dicts and to dicts we have header with
-            some header with different cookie and default answer for each user
-            ( if question is how many scale in image this answers help us  )
+            in final_header we have a list of dicts and in dicts we have header 
+             with different cookie and default answer for each user
+            ( if question is' how many scale in image' this answers help us  )
             """
             answer = final_answer(header['answer'], captcha_question)
             executor.submit(send_answer, header['header'], url_id, answer, item_id)
